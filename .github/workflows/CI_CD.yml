@@ -4,9 +4,8 @@ name: CI\CD
 
 # Controls when the workflow will run
 on:
+  
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ github.ref_name ]
   pull_request:
     branches: [ main ]
 
@@ -17,6 +16,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    if: github.event.pull_request.merged == 'true'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -27,10 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: |
-          branch = ${{ github.head_ref }} | cut -d'/' -f 2
-          echo ${{ github.head_ref }} | cut -d'/' -f 2
-          echo $branch
+        run: echo ${{ github.head_ref }} !
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
