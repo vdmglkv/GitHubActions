@@ -12,10 +12,6 @@ on:
       - main
     types:
       - closed
-env: 
-  BRANCH: feature/AI-1023 | cut -d'/' -f 2
-
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
