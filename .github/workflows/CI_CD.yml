@@ -34,7 +34,8 @@ jobs:
         run: |
 
           BRANCH=feature/AI-1023 | cut -d'/' -f 2
-          echo ${BRANCH}
+          echo "$BRANCH"
+
 
 
 
