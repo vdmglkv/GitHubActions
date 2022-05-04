@@ -12,6 +12,8 @@ on:
       - main
     types:
       - closed
+env: 
+  BRANCH: feature/AI-1023 | cut -d'/' -f 2
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -32,6 +34,7 @@ jobs:
         run: |
           BRANCH="feature/AI-1023" | cut -d'/' -f 2
           echo "$BRANCH"
+
         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
