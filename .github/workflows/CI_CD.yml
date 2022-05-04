@@ -32,7 +32,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          BRANCH = feature/AI-1023 | cut -d'/' -f 2
+          BRANCH=feature/AI-1023 | cut -d'/' -f 2
           echo "BRANCH"
 
 
