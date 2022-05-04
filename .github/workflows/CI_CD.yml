@@ -23,7 +23,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo $GITHUB_REF_NAME
+        run: |
+          BRANCH = echo "feature/AI-1027" | cut -d'/' -f 2
+          echo "$BRANCH"
 
         
       # Runs a set of commands using the runners shell
