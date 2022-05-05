@@ -39,7 +39,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        if: $GITHUB_REF_NAME != feature/* 
+        if: $GITHUB_REF_NAME!=feature/* 
         run: |
           echo $GITHUB_REF_NAME
         
