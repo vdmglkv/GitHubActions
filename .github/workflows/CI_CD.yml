@@ -36,7 +36,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          github.event.inputs.ENVIRONMENT="QA"
+          $(github.event.inputs.ENVIRONMENT="QA")
           echo ${{ github.event.inputs.ENVIRONMENT }}
         
       # Runs a set of commands using the runners shell
