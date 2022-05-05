@@ -36,7 +36,7 @@ jobs:
       - name: Run a one-line script
         run: |
               if [ "${{ github.event.inputs.ENVIRONMENT }}" == "DEV" ]; then
-                github.event.inputs.ENVIRONMENT = 'QA'
+                ${{ github.event.inputs.ENVIRONMENT }} = 'QA'
         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
