@@ -23,7 +23,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          if [ [feature/AI-1023 == feature/*] ]; then
+          if [ startsWith('feature/AI-1023', 'feature/') ]; then
             echo "$GITHUB_REF_NAME"
           else
             echo "No"
