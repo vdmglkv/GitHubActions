@@ -2,15 +2,12 @@
 
 name: CI\CD
 
-# Controls when the workflow will run
-on:
-  push:
+   pull_request:
     branches:
-      - '*'
-      - '!main'
-      - '!develop'
-
-  workflow_dispatch:
+     - 'main'
+    types: closed
+     
+   workflow_dispatch:
     inputs:
       ENVIRONMENT:
         description: Deployment prefix.
@@ -20,13 +17,6 @@ on:
           - DEV
           - QA
           - PRD
-      REPOSITORY_FOLDER:
-        description: >
-          Folder name in deployment prefix. 
-          Default value for DEV prefix is name of branch, for QA and PRD - rds-databricks.
-        type: string
-        required: false
-  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -41,10 +31,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo ${{ env.env }}
+          echo "I'am running"
         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo ${{ env.ENVIRONMENT }}
           echo test, and deploly your project.
