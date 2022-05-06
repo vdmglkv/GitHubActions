@@ -24,7 +24,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   run_if:
-    if: github.event.pull_request.merged
+    if: github.event.pull_request.closed
+
 
     runs-on: ubuntu-latest
 
