@@ -40,7 +40,7 @@ jobs:
             BRANCH=$(echo ${{ github.head_ref }} | cut -d'/' -f 2)
          else
             echo "Branch should start with feature"
-            exit 1
+            exit 0
          fi
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
