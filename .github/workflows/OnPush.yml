@@ -48,7 +48,7 @@ jobs:
           else
             if [ ${{ github.event.inputs.ENVIRONMENT }} == "DEV" ]; then
               ENVIRONMENT="QA"
-            else:
+            else
               ENVIRONMENT=${{ github.event.inputs.ENVIRONMENT }}
             fi
           fi
