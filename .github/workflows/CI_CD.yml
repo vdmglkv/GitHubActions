@@ -32,7 +32,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-         if [[ $GITHUB_REF_NAME == dev* ]]; then
+         if [[ ${{ github.head_ref }} == dev* ]]; then
             ENVIRONMENT="QA"
           else
             ENVIRONMENT=${{ github.event.inputs.ENVIRONMENT }}
