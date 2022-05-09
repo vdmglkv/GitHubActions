@@ -57,10 +57,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          if [ "$GITHUB_REF_NAME" != feature/* ]; then
-            if [ ${{ env.ENVIRONMENT }} != "QA" ]; then
+          if ["$GITHUB_REF_NAME" != feature/*] $$ [ ${{env.ENVIRONMENT}} != "DEV"]; then
               echo "No"
-            fi
           else
             echo ${{ env.ENVIRONMENT }}
           fi
