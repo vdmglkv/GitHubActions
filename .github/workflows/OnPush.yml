@@ -59,7 +59,8 @@ jobs:
         run: |
           if [ "$GITHUB_REF_NAME" != feature/* ]; then
             if [ ${{ env.ENVIRONMENT }} != "QA" ]; then
-            echo "No"
+              echo "No"
+            fi
           else
             echo ${{ env.ENVIRONMENT }}
           fi
