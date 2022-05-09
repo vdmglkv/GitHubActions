@@ -43,11 +43,14 @@ jobs:
       - name: Run a one-line scriptd
         run: |
           echo $GITHUB_REF_NAME
-          if [[ $GITHUB_REF_NAME == dev* ]]; then
+          if [ -z "${{ github.event.inputs.ENVIRONMENT }}" ]; then
             ENVIRONMENT="QA"
-            
           else
-            ENVIRONMENT=${{ github.event.inputs.ENVIRONMENT }}
+            if [ ${{ github.event.inputs.ENVIRONMENT }} == "DEV" ]
+              ENVIRONMENT="QA"
+            else:
+              ENVIRONMENT=${{ github.event.inputs.ENVIRONMENT }}
+            fi
           fi
           echo ENVIRONMENT=$ENVIRONMENT >> $GITHUB_ENV
 
