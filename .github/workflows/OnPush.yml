@@ -58,7 +58,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${{env.ENVIRONMENT}}
-          if  [ "$GITHUB_REF_NAME"!=feature/* ] $$ [ "${{env.ENVIRONMENT}}"!="DEV" ]; then
+          if  ( "$GITHUB_REF_NAME"!=feature/*) $$ ( "${{env.ENVIRONMENT}}"!="DEV" ); then
               echo "No"
           else
             echo ${{ env.ENVIRONMENT }}
