@@ -44,7 +44,7 @@ jobs:
         run: |
           echo $GITHUB_REF_NAME
           if [ -z "${{ github.event.inputs.ENVIRONMENT }}" ]; then
-            ENVIRONMENT="DEV"
+            ENVIRONMENT="QA"
           else
             if [ ${{ github.event.inputs.ENVIRONMENT }} == "DEV" ]; then
               ENVIRONMENT="QA"
